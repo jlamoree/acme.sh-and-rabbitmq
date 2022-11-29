@@ -1,5 +1,6 @@
 # Resources
 
+- Project repository on [Microsoft® GitHub®](https://github.com/jlamoree/acme.sh-and-rabbitmq)
 - acme.sh is a project for issuing TLS certificates using shell scrips
   - [Project Repository](https://github.com/acmesh-official/acme.sh)
   - [Documentation: DNS Alias Mode](https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode)

@@ -1,4 +1,3 @@
-import ssl
 import pika
 
 cp = pika.ConnectionParameters(host="rabbitmq.internal.newbury-park.lamoree.net")

@@ -14,7 +14,7 @@ Download the gzipped tarball distribution of the desired version from https://gi
 Perform the following:
 
 ```shell
-pushd Downloads
+pushd ~/Downloads
 tar -zxf acme.sh-3.0.5.tar.gz
 pushd acme.sh-3.0.5
 ./acme.sh --install --force --log --accountemail admin@lamoree.net
