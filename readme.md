@@ -1,5 +1,13 @@
 # Using acme.sh with RabbitMQ
 
+## Background
+
+I have an internal DNS server on my office LAN that is authoritative for `internal.newbury-park.lamoree.net`. The public internet cannot resolve hostnames in that zone. If I want to use DNS-based verification for Let's Encrypt, I'll need to use a challenge alias. Hosted zones exist in AWS Route 53 for `newbury-park.lamoree.net` and `aws.lamoree.net` and their records can be programmatically managed using the AWS API.
+
+When requesting a certificate, acme.sh does the work of creating a TXT record in `aws.lamoree.net` with the certificate issuer's ACME challenge value. The issuer can verify the challenge using a preexisting CNAME in the `newbury-park.lamoree.net` zone. The result is a certificate issued for `rabbitmq.internal.newbury-park.lamoree.net` without any involvement of my internal DNS infrastructure. The CNAME can remain in place; the TXT record gets deleted automatically.
+
+For some development work, I want to use the issued TLS certificate with RabbitMQ in Docker on my workstation. I'll verify that it's successful with some basic Python programs.
+
 ## Download and Setup
 
 Download the gzipped tarball distribution of the desired version from https://github.com/acmesh-official/acme.sh/releases
